@@ -1,0 +1,1185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="DARC is the only sports performance concussion protocol built for competitive youth athletes — bridging the gap between diagnosis and full return to sport.">
+<meta name="keywords" content="concussion protocol, youth athletes, return to sport, sports medicine, physical therapy, concussion recovery">
+<title>DARC Protocol — Return to Sport Starts Here</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=Caudex:ital@1&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --black: #201911;
+    --rust: #812408;
+    --rust-light: #a33010;
+    --mauve: #4B3240;
+    --cream: #F5F0EB;
+    --cream-dark: #ede6dd;
+    --white: #ffffff;
+    --text-muted: #6b5f57;
+    --border: rgba(32,25,17,0.12);
+  }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'Inter', sans-serif;
+    background: var(--cream);
+    color: var(--black);
+    font-size: 16px;
+    line-height: 1.7;
+    overflow-x: hidden;
+  }
+
+  /* ── NAV ── */
+  nav {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    z-index: 100;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 5vw;
+    height: 64px;
+    background: rgba(245,240,235,0.92);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--border);
+  }
+
+  .nav-wordmark {
+    font-family: 'Outfit', sans-serif;
+    font-weight: 700;
+    font-size: 22px;
+    letter-spacing: 0.12em;
+    color: var(--rust);
+    text-decoration: none;
+  }
+
+  .nav-links {
+    display: flex;
+    gap: 2rem;
+    list-style: none;
+  }
+
+  .nav-links a {
+    font-family: 'Inter', sans-serif;
+    font-size: 13px;
+    font-weight: 500;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--black);
+    text-decoration: none;
+    opacity: 0.7;
+    transition: opacity 0.2s;
+  }
+
+  .nav-links a:hover { opacity: 1; }
+
+  .nav-cta {
+    font-family: 'Inter', sans-serif;
+    font-size: 13px;
+    font-weight: 500;
+    letter-spacing: 0.04em;
+    padding: 9px 20px;
+    background: var(--rust);
+    color: var(--cream) !important;
+    opacity: 1 !important;
+    border-radius: 4px;
+    text-decoration: none;
+    transition: background 0.2s !important;
+  }
+
+  .nav-cta:hover { background: var(--rust-light) !important; }
+
+  /* ── HERO ── */
+  .hero {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    padding: 120px 5vw 80px;
+    position: relative;
+    overflow: hidden;
+    background: var(--cream);
+  }
+
+  .hero::before {
+    content: '';
+    position: absolute;
+    top: 0; right: 0;
+    width: 46%; height: 100%;
+    background: var(--black);
+    clip-path: polygon(10% 0%, 100% 0%, 100% 100%, 0% 100%);
+    z-index: 0;
+  }
+
+  .hero-content {
+    position: relative;
+    z-index: 1;
+    max-width: 520px;
+  }
+
+  .hero-right {
+    position: absolute;
+    right: 3vw;
+    top: 0;
+    bottom: 0;
+    width: 34%;
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 0.75rem;
+    padding: 0 3vw;
+  }
+
+  .stat-card {
+    background: rgba(245,240,235,0.07);
+    border: 1px solid rgba(245,240,235,0.14);
+    border-radius: 6px;
+    padding: 0.875rem 1.25rem;
+    color: var(--cream);
+  }
+
+  .stat-number {
+    font-family: 'Outfit', sans-serif;
+    font-size: 34px;
+    font-weight: 700;
+    line-height: 1;
+    color: var(--rust);
+    margin-bottom: 0.35rem;
+    white-space: nowrap;
+  }
+
+  .stat-label {
+    font-size: 13px;
+    font-weight: 400;
+    color: rgba(245,240,235,0.7);
+    line-height: 1.45;
+  }
+
+  .hero-eyebrow {
+    font-family: 'Inter', sans-serif;
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--rust);
+    margin-bottom: 1.5rem;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .hero-eyebrow::before {
+    content: '';
+    display: inline-block;
+    width: 32px; height: 2px;
+    background: var(--rust);
+  }
+
+  .hero-title {
+    font-family: 'Outfit', sans-serif;
+    font-size: clamp(48px, 6vw, 80px);
+    font-weight: 700;
+    line-height: 1.0;
+    letter-spacing: -0.02em;
+    color: var(--black);
+    margin-bottom: 1.5rem;
+  }
+
+  .hero-title .accent { color: var(--rust); }
+
+  .hero-tagline {
+    font-family: 'Caudex', serif;
+    font-style: italic;
+    font-size: clamp(18px, 2vw, 22px);
+    color: var(--black);
+    opacity: 0.85;
+    margin-bottom: 2.5rem;
+    line-height: 1.5;
+    max-width: 480px;
+  }
+
+  .hero-actions {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+  }
+
+  .btn-primary {
+    display: inline-block;
+    padding: 14px 32px;
+    background: var(--rust);
+    color: var(--cream);
+    font-family: 'Inter', sans-serif;
+    font-size: 14px;
+    font-weight: 500;
+    letter-spacing: 0.04em;
+    text-decoration: none;
+    border-radius: 4px;
+    transition: background 0.2s, transform 0.15s;
+  }
+
+  .btn-primary:hover { background: var(--rust-light); transform: translateY(-1px); }
+
+  .btn-secondary {
+    display: inline-block;
+    padding: 14px 32px;
+    border: 1.5px solid var(--black);
+    color: var(--black);
+    font-family: 'Inter', sans-serif;
+    font-size: 14px;
+    font-weight: 500;
+    letter-spacing: 0.04em;
+    text-decoration: none;
+    border-radius: 4px;
+    transition: background 0.2s, transform 0.15s;
+  }
+
+  .btn-secondary:hover { background: rgba(32,25,17,0.06); transform: translateY(-1px); }
+
+
+
+  /* ── SECTION BASE ── */
+  section {
+    padding: 100px 5vw;
+  }
+
+  .section-eyebrow {
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--rust);
+    margin-bottom: 1rem;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .section-eyebrow::before {
+    content: '';
+    display: inline-block;
+    width: 24px; height: 2px;
+    background: var(--rust);
+  }
+
+  .section-title {
+    font-family: 'Outfit', sans-serif;
+    font-size: clamp(32px, 4vw, 48px);
+    font-weight: 600;
+    line-height: 1.1;
+    letter-spacing: -0.02em;
+    color: var(--black);
+    margin-bottom: 1.5rem;
+  }
+
+  .section-body {
+    font-size: 16px;
+    line-height: 1.75;
+    color: var(--black);
+    opacity: 0.8;
+    max-width: 680px;
+  }
+
+  /* ── THE GAP ── */
+  .gap-section {
+    background: var(--black);
+    color: var(--cream);
+  }
+
+  .gap-section .section-title { color: var(--cream); }
+  .gap-section .section-eyebrow { color: var(--rust); }
+  .gap-section .section-eyebrow::before { background: var(--rust); }
+  .gap-section .section-body { color: var(--cream); opacity: 0.75; }
+
+  .gap-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1px;
+    margin-top: 3rem;
+    background: rgba(245,240,235,0.08);
+    border-radius: 8px 8px 0 0;
+    overflow: hidden;
+  }
+
+  .gap-col {
+    padding: 2rem 2.5rem;
+    background: rgba(245,240,235,0.04);
+  }
+
+  .gap-col-label {
+    font-family: 'Outfit', sans-serif;
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    margin-bottom: 1.5rem;
+  }
+
+  .gap-col-label.before { color: var(--text-muted); }
+  .gap-col-label.after { color: var(--rust); }
+  .gap-col-label.darc-label { color: var(--cream); }
+
+  .gap-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    margin-bottom: 1rem;
+    font-size: 14px;
+    color: rgba(245,240,235,0.65);
+    line-height: 1.5;
+  }
+
+  .gap-item::before {
+    content: '—';
+    flex-shrink: 0;
+    color: var(--text-muted);
+    margin-top: 1px;
+  }
+
+  .gap-item.active { color: var(--cream); }
+  .gap-item.active::before { content: '✓'; color: var(--rust); font-weight: 700; }
+
+  .gap-darc-box {
+    grid-column: 1 / -1;
+    background: rgba(129,36,8,0.15);
+    border: 1px solid rgba(129,36,8,0.35);
+    border-radius: 0 0 8px 8px;
+    padding: 2rem 2.5rem;
+    display: flex;
+    align-items: center;
+    gap: 3rem;
+  }
+
+  .gap-darc-box-word {
+    font-family: 'Outfit', sans-serif;
+    font-size: 48px;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    color: var(--rust);
+    flex-shrink: 0;
+  }
+
+  .gap-darc-box-text {
+    font-size: 15px;
+    color: rgba(245,240,235,0.75);
+    line-height: 1.65;
+    max-width: 600px;
+  }
+
+  .gap-divider {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 2px;
+    background: rgba(245,240,235,0.08);
+    position: relative;
+  }
+
+  .gap-divider-label {
+    writing-mode: vertical-rl;
+    font-family: 'Outfit', sans-serif;
+    font-size: 10px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: rgba(245,240,235,0.3);
+    user-select: none;
+  }
+
+  .gap-center {
+    background: rgba(129,36,8,0.12);
+    border: 1px solid rgba(129,36,8,0.3);
+    border-radius: 6px;
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    min-width: unset;
+  }
+
+  .gap-center-word {
+    font-family: 'Outfit', sans-serif;
+    font-size: 36px;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    color: var(--rust);
+    margin-bottom: 0.5rem;
+  }
+
+  .gap-center-sub {
+    font-size: 12px;
+    color: rgba(245,240,235,0.5);
+    line-height: 1.5;
+    max-width: 160px;
+  }
+
+  /* ── PROTOCOL ── */
+  .protocol-section { background: var(--cream-dark); }
+
+  .phases-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 1px;
+    margin-top: 3rem;
+    background: var(--border);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    overflow: hidden;
+  }
+
+  .phase-card {
+    background: var(--cream);
+    padding: 1.75rem 1.5rem;
+    transition: background 0.2s;
+  }
+
+  .phase-card:hover { background: var(--white); }
+
+  .phase-num {
+    font-family: 'Outfit', sans-serif;
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--rust);
+    margin-bottom: 0.5rem;
+  }
+
+  .phase-name {
+    font-family: 'Outfit', sans-serif;
+    font-size: 16px;
+    font-weight: 600;
+    color: var(--black);
+    margin-bottom: 0.75rem;
+    line-height: 1.3;
+  }
+
+  .phase-desc {
+    font-size: 13px;
+    line-height: 1.6;
+    color: var(--text-muted);
+  }
+
+  /* ── WHO IS DARC FOR ── */
+  .who-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 1.5rem;
+    margin-top: 3rem;
+  }
+
+  .who-card {
+    background: var(--white);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 2rem;
+    border-top: 3px solid var(--rust);
+  }
+
+  .who-card-title {
+    font-family: 'Outfit', sans-serif;
+    font-size: 18px;
+    font-weight: 600;
+    color: var(--black);
+    margin-bottom: 0.75rem;
+  }
+
+  .who-card-body {
+    font-size: 14px;
+    line-height: 1.65;
+    color: var(--text-muted);
+  }
+
+  /* ── DIFFERENTIATOR ── */
+  .diff-section { background: var(--mauve); }
+  .diff-section .section-title { color: var(--cream); }
+  .diff-section .section-eyebrow { color: rgba(245,240,235,0.6); }
+  .diff-section .section-eyebrow::before { background: rgba(245,240,235,0.4); }
+
+  .diff-quote {
+    font-family: 'Caudex', serif;
+    font-style: italic;
+    font-size: clamp(20px, 2.5vw, 28px);
+    line-height: 1.5;
+    color: var(--cream);
+    opacity: 0.9;
+    max-width: 720px;
+    margin: 2rem 0;
+    padding-left: 2rem;
+    border-left: 3px solid var(--rust);
+  }
+
+  .diff-pillars {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1rem;
+    margin-top: 2.5rem;
+  }
+
+  .diff-pillar {
+    padding: 1.5rem;
+    border: 1px solid rgba(245,240,235,0.12);
+    border-radius: 6px;
+  }
+
+  .diff-pillar-title {
+    font-family: 'Outfit', sans-serif;
+    font-size: 15px;
+    font-weight: 600;
+    color: var(--cream);
+    margin-bottom: 0.5rem;
+  }
+
+  .diff-pillar-body {
+    font-size: 13px;
+    color: rgba(245,240,235,0.6);
+    line-height: 1.6;
+  }
+
+  /* ── ABOUT ── */
+  .about-inner {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 6vw;
+    align-items: center;
+  }
+
+  .about-credentials {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    margin-top: 2rem;
+  }
+
+  .credential {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-size: 14px;
+    color: var(--text-muted);
+  }
+
+  .credential::before {
+    content: '';
+    width: 6px; height: 6px;
+    background: var(--rust);
+    border-radius: 50%;
+    flex-shrink: 0;
+  }
+
+  .about-visual {
+    background: var(--black);
+    border-radius: 8px;
+    padding: 3rem 2.5rem;
+    color: var(--cream);
+  }
+
+  .about-visual-title {
+    font-family: 'Outfit', sans-serif;
+    font-size: 13px;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--rust);
+    margin-bottom: 2rem;
+  }
+
+  .about-stat-row {
+    display: flex;
+    align-items: baseline;
+    gap: 1rem;
+    padding: 1rem 0;
+    border-bottom: 1px solid rgba(245,240,235,0.08);
+  }
+
+  .about-stat-row:last-child { border-bottom: none; }
+
+  .about-stat-n {
+    font-family: 'Outfit', sans-serif;
+    font-size: 28px;
+    font-weight: 700;
+    color: var(--rust);
+    min-width: 90px;
+    white-space: nowrap;
+  }
+
+  .about-stat-desc {
+    font-size: 13px;
+    color: rgba(245,240,235,0.65);
+    line-height: 1.5;
+  }
+
+  /* ── OFFERS ── */
+  .offers-section { background: var(--cream-dark); }
+
+  .offers-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.5rem;
+    margin-top: 3rem;
+  }
+
+  .offer-card {
+    background: var(--white);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 2rem;
+    position: relative;
+    transition: transform 0.2s, box-shadow 0.2s;
+  }
+
+  .offer-card:hover { transform: translateY(-3px); }
+
+  .offer-card.featured {
+    border-color: var(--rust);
+    border-width: 2px;
+  }
+
+  .offer-badge {
+    position: absolute;
+    top: -12px; left: 1.5rem;
+    background: var(--rust);
+    color: var(--cream);
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    padding: 4px 12px;
+    border-radius: 3px;
+  }
+
+  .offer-label {
+    font-family: 'Inter', sans-serif;
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--rust);
+    margin-bottom: 0.5rem;
+  }
+
+  .offer-title {
+    font-family: 'Outfit', sans-serif;
+    font-size: 20px;
+    font-weight: 600;
+    color: var(--black);
+    margin-bottom: 1rem;
+    line-height: 1.3;
+  }
+
+  .offer-body {
+    font-size: 14px;
+    line-height: 1.65;
+    color: var(--text-muted);
+    margin-bottom: 1.5rem;
+  }
+
+  .offer-price {
+    font-family: 'Outfit', sans-serif;
+    font-size: 14px;
+    font-weight: 500;
+    color: var(--black);
+    padding-top: 1rem;
+    border-top: 1px solid var(--border);
+  }
+
+  /* ── CONTACT ── */
+  .contact-section {
+    background: var(--black);
+    color: var(--cream);
+  }
+
+  .contact-section .section-title { color: var(--cream); }
+  .contact-section .section-eyebrow { color: var(--rust); }
+  .contact-section .section-eyebrow::before { background: var(--rust); }
+
+  .contact-inner {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 6vw;
+    align-items: start;
+    margin-top: 3rem;
+  }
+
+  .contact-intro {
+    font-size: 16px;
+    line-height: 1.75;
+    color: rgba(245,240,235,0.7);
+    margin-bottom: 2rem;
+  }
+
+  .contact-detail {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .contact-detail-label {
+    font-size: 11px;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: rgba(245,240,235,0.4);
+  }
+
+  .contact-detail-value {
+    font-size: 15px;
+    color: var(--cream);
+  }
+
+  .contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+  }
+
+  .form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+  }
+
+  .form-label {
+    font-size: 12px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: rgba(245,240,235,0.5);
+  }
+
+  .form-input,
+  .form-select,
+  .form-textarea {
+    background: rgba(245,240,235,0.06);
+    border: 1px solid rgba(245,240,235,0.15);
+    border-radius: 4px;
+    padding: 12px 14px;
+    font-family: 'Inter', sans-serif;
+    font-size: 14px;
+    color: var(--cream);
+    outline: none;
+    transition: border-color 0.2s;
+    width: 100%;
+  }
+
+  .form-input::placeholder,
+  .form-textarea::placeholder { color: rgba(245,240,235,0.3); }
+
+  .form-input:focus,
+  .form-select:focus,
+  .form-textarea:focus { border-color: var(--rust); }
+
+  .form-select {
+    appearance: none;
+    cursor: pointer;
+  }
+
+  .form-select option { background: var(--black); }
+
+  .form-textarea { resize: vertical; min-height: 120px; }
+
+  .form-submit {
+    padding: 14px 32px;
+    background: var(--rust);
+    color: var(--cream);
+    font-family: 'Inter', sans-serif;
+    font-size: 14px;
+    font-weight: 500;
+    letter-spacing: 0.04em;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background 0.2s;
+    align-self: flex-start;
+  }
+
+  .form-submit:hover { background: var(--rust-light); }
+
+  /* ── FOOTER ── */
+  footer {
+    background: var(--black);
+    border-top: 1px solid rgba(245,240,235,0.08);
+    padding: 2rem 5vw;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 1rem;
+  }
+
+  .footer-wordmark {
+    font-family: 'Outfit', sans-serif;
+    font-size: 18px;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    color: var(--rust);
+  }
+
+  .footer-copy {
+    font-size: 12px;
+    color: rgba(245,240,235,0.35);
+  }
+
+  /* ── ANIMATIONS ── */
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(24px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  .hero-eyebrow { animation: fadeUp 0.6s ease both; }
+  .hero-title { animation: fadeUp 0.6s 0.1s ease both; }
+  .hero-tagline { animation: fadeUp 0.6s 0.2s ease both; }
+  .hero-actions { animation: fadeUp 0.6s 0.3s ease both; }
+  .hero-right { animation: fadeUp 0.6s 0.4s ease both; }
+
+  /* ── RESPONSIVE ── */
+  @media (max-width: 900px) {
+    .hero::before { display: none; }
+    .hero-right { display: none; }
+    .hero { padding: 100px 5vw 60px; background: var(--black); }
+    .hero::before { display: none; }
+    .hero-content { max-width: 100%; }
+    .hero-title { color: var(--cream); }
+    .hero-tagline { color: rgba(245,240,235,0.8); }
+    .btn-secondary { border-color: rgba(245,240,235,0.5); color: var(--cream); }
+    .hero-right { display: none; }
+
+    .gap-grid { grid-template-columns: 1fr; }
+    .gap-divider { display: none; }
+    .gap-center { min-width: unset; margin: 1rem 0; }
+
+    .about-inner,
+    .contact-inner { grid-template-columns: 1fr; }
+
+    .form-row { grid-template-columns: 1fr; }
+
+    .nav-links { display: none; }
+  }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a href="#" class="nav-wordmark">DARC</a>
+  <ul class="nav-links">
+    <li><a href="#protocol">Protocol</a></li>
+    <li><a href="#who">Who It's For</a></li>
+    <li><a href="#about">About</a></li>
+    <li><a href="#work-with-us">Work With Us</a></li>
+    <li><a href="#contact" class="nav-cta">Get in Touch</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<section class="hero" id="home">
+  <div class="hero-content">
+    <p class="hero-eyebrow">Sports Performance Concussion Protocol</p>
+    <h1 class="hero-title">Most protocols<br>stop at<br><span class="accent">diagnosis.</span><br>DARC starts there.</h1>
+    <p class="hero-tagline">The only return-to-sport concussion protocol built specifically for competitive youth athletes.</p>
+    <div class="hero-actions">
+      <a href="#work-with-us" class="btn-primary">Work With Us</a>
+      <a href="#protocol" class="btn-secondary">See the Protocol</a>
+    </div>
+  </div>
+  <div class="hero-right">
+    <div class="stat-card">
+      <div class="stat-number">50–65%</div>
+      <div class="stat-label">of youth concussions go unreported each year</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-number">2/3</div>
+      <div class="stat-label">of high schools have no full-time athletic trainer</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-number">~0</div>
+      <div class="stat-label">published protocols integrate visual, autonomic &amp; vestibular rehab simultaneously</div>
+    </div>
+
+  </div>
+</section>
+
+<!-- THE GAP -->
+<section class="gap-section" id="gap">
+  <div class="section-eyebrow">The Problem</div>
+  <h2 class="section-title">There's a gap. And it's only getting larger.</h2>
+  <p class="section-body">Youth athletes are increasingly competitive. The sports medicine infrastructure protecting them is not keeping pace. When a concussion happens, the standard of care leaves athletes stranded between two moments — and DARC fills that space.</p>
+
+  <div class="gap-grid">
+    <div class="gap-col">
+      <div class="gap-col-label before">Current standard</div>
+      <div class="gap-item">Diagnosis by physician</div>
+      <div class="gap-item">Rest for 24–48 hours</div>
+      <div class="gap-item">Symptom monitoring</div>
+      <div class="gap-item">Wait for clearance</div>
+      <div class="gap-item">Doctor signs off</div>
+      <div class="gap-item">Return to full contact</div>
+    </div>
+    <div class="gap-col">
+      <div class="gap-col-label after">With DARC</div>
+      <div class="gap-item active">Sideline recognition with structured screen</div>
+      <div class="gap-item active">Comprehensive assessment at 48 hours</div>
+      <div class="gap-item active">Individualized pathway by deficit type</div>
+      <div class="gap-item active">Gated progression with objective criteria</div>
+      <div class="gap-item active">Sports-specific reintegration before contact</div>
+      <div class="gap-item active">Clearance with performance benchmarks</div>
+    </div>
+    <div class="gap-darc-box">
+      <div class="gap-darc-box-word">DARC</div>
+      <div class="gap-darc-box-text">Six-phase gated protocol integrating visual retraining, autonomic rehabilitation, vestibular rehab, and performance benchmarks — simultaneously. The only protocol built specifically for competitive youth athletes.</div>
+    </div>
+  </div>
+</section>
+
+<!-- PROTOCOL -->
+<section class="protocol-section" id="protocol">
+  <div class="section-eyebrow">The Protocol</div>
+  <h2 class="section-title">Six phases. One standard.</h2>
+  <p class="section-body">DARC is a gated, six-phase return-to-sport system. Athletes progress only when objective criteria are met — not on time alone. Each phase addresses the root driver of chronic symptoms: maladaptation during recovery.</p>
+
+  <div class="phases-grid">
+    <div class="phase-card">
+      <div class="phase-num">Phase 0</div>
+      <div class="phase-name">Sideline Recognition</div>
+      <div class="phase-desc">Structured two-tier screening. Mechanism, Maddock Questions, cervical screen, and performance run against pre-season baseline.</div>
+    </div>
+    <div class="phase-card">
+      <div class="phase-num">Phase 1</div>
+      <div class="phase-name">Acute Rest</div>
+      <div class="phase-desc">0–48 hours of complete rest. Clear exit criteria tied to daily activity tolerance — not a timer.</div>
+    </div>
+    <div class="phase-card">
+      <div class="phase-num">Phase 2</div>
+      <div class="phase-name">DARC Assessment</div>
+      <div class="phase-desc">Comprehensive vestibular, oculomotor, cervical, and Buffalo Treadmill evaluation. Identifies the athlete's individual deficit pathway.</div>
+    </div>
+    <div class="phase-card">
+      <div class="phase-num">Phase 3</div>
+      <div class="phase-name">Individualized Recovery</div>
+      <div class="phase-desc">Three tiered sub-phases (SP1, SP2, SP3), each performance and tolerance gated. Visual training, graded endurance, and resistance reintroduction in sequence.</div>
+    </div>
+    <div class="phase-card">
+      <div class="phase-num">Phase 4</div>
+      <div class="phase-name">Sports-Specific Reintegration</div>
+      <div class="phase-desc">Non-contact practice, sport drills, and progressive loading at RPE 6–8. Minimum one full week before Phase 5 consideration.</div>
+    </div>
+    <div class="phase-card">
+      <div class="phase-num">Phase 5</div>
+      <div class="phase-name">Clearance & Return</div>
+      <div class="phase-desc">Performance benchmarks within ±5% of pre-season. Written physician clearance mandatory. Coach briefing required before full contact.</div>
+    </div>
+  </div>
+</section>
+
+<!-- WHO IS DARC FOR -->
+<section id="who">
+  <div class="section-eyebrow">Who It's For</div>
+  <h2 class="section-title">Built for the people responsible for athletes.</h2>
+  <p class="section-body">DARC is designed for sports organizations that take return-to-play seriously — and recognize that "rest and wait" is not a protocol.</p>
+
+  <div class="who-grid">
+    <div class="who-card">
+      <div class="who-card-title">Youth Sports Organizations</div>
+      <div class="who-card-body">Club programs, travel teams, and recreational leagues with competitive athletes who need a real return-to-sport standard — not just a liability waiver. Football, ice hockey, and soccer programs in particular.</div>
+    </div>
+    <div class="who-card">
+      <div class="who-card-title">High School Athletic Programs</div>
+      <div class="who-card-body">Schools with athletic trainers who need a structured, defensible protocol they can implement across multiple sports. Two-thirds of high schools lack a full-time AT — DARC gives those programs a system they can actually use.</div>
+    </div>
+    <div class="who-card">
+      <div class="who-card-title">PT & AT Clinicians</div>
+      <div class="who-card-body">Physical therapists and athletic trainers who want a validated, evidence-based framework for managing concussion recovery — not just a checklist. Certification course coming.</div>
+    </div>
+    <div class="who-card">
+      <div class="who-card-title">Parents & Athletes</div>
+      <div class="who-card-body">Families navigating a concussion without a clear roadmap. DARC gives athletes the structure to recover completely — not just fast. Consumer resource coming soon.</div>
+    </div>
+  </div>
+</section>
+
+<!-- DIFFERENTIATOR -->
+<section class="diff-section">
+  <div class="section-eyebrow">What Makes DARC Different</div>
+  <h2 class="section-title">We don't replace the diagnosis.<br>We own what comes after.</h2>
+  <blockquote class="diff-quote">The primary driver of chronic symptoms is not the concussion itself — it is maladaptation during recovery. DARC is designed to prevent that.</blockquote>
+
+  <div class="diff-pillars">
+    <div class="diff-pillar">
+      <div class="diff-pillar-title">Visual Retraining</div>
+      <div class="diff-pillar-body">Oculomotor and vestibulo-ocular training integrated from Phase 3 — not punted to occupational therapy or omitted entirely.</div>
+    </div>
+    <div class="diff-pillar">
+      <div class="diff-pillar-title">Autonomic Rehab</div>
+      <div class="diff-pillar-body">Buffalo Treadmill/Bike Test-driven exercise prescription with individualized heart rate targets. Graded exertion is treatment, not a risk.</div>
+    </div>
+    <div class="diff-pillar">
+      <div class="diff-pillar-title">Vestibular Rehab</div>
+      <div class="diff-pillar-body">Comprehensive vestibular assessment and pathway-specific habituation and stabilization training built into the protocol itself.</div>
+    </div>
+    <div class="diff-pillar">
+      <div class="diff-pillar-title">Objective Gating</div>
+      <div class="diff-pillar-body">Athletes progress on criteria — VAS scores, heart rate recovery, accuracy benchmarks — not calendar days. No guessing, no rushing.</div>
+    </div>
+    <div class="diff-pillar">
+      <div class="diff-pillar-title">Performance Benchmarks</div>
+      <div class="diff-pillar-body">Clearance requires performance within ±5% of pre-season baselines. Return to sport is not a signature — it's a standard.</div>
+    </div>
+    <div class="diff-pillar">
+      <div class="diff-pillar-title">Youth Sport Focus</div>
+      <div class="diff-pillar-body">Designed specifically for competitive youth athletes — not adapted from adult protocols. The populations are not the same.</div>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section id="about">
+  <div class="about-inner">
+    <div>
+      <div class="section-eyebrow">About</div>
+      <h2 class="section-title">Built by a clinician who saw the gap firsthand.</h2>
+      <p class="section-body">Dr. Chloe Linh Nguyen is a licensed Doctor of Physical Therapy specializing in Sports Performance Rehabilitation and Concussion. DARC was developed from direct clinical experience with competitive youth athletes — and from the consistent observation that the space between diagnosis and full clearance was unstructured, inconsistent, and clinically unsatisfying.</p>
+      <p class="section-body" style="margin-top: 1rem;">DARC is not a research project. It is a working clinical protocol, developed to be implemented — by individual clinicians, by organizations, and eventually at scale.</p>
+      <div class="about-credentials">
+        <div class="credential">Doctor of Physical Therapy (DPT)</div>
+        <div class="credential">Sports Performance Rehabilitation specialist</div>
+        <div class="credential">Concussion management and return-to-sport</div>
+        <div class="credential">Visual and vestibular rehabilitation</div>
+      </div>
+    </div>
+    <div class="about-visual">
+      <div class="about-visual-title">The problem in numbers</div>
+      <div class="about-stat-row">
+        <div class="about-stat-n">50–65%</div>
+        <div class="about-stat-desc">of youth concussions are never reported to a medical professional</div>
+      </div>
+      <div class="about-stat-row">
+        <div class="about-stat-n">2/3</div>
+        <div class="about-stat-desc">of US high schools have no full-time athletic trainer on staff</div>
+      </div>
+      <div class="about-stat-row">
+        <div class="about-stat-n">~0</div>
+        <div class="about-stat-desc">published protocols simultaneously integrate visual, autonomic, and vestibular rehab for youth athletes</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WORK WITH US -->
+<section class="offers-section" id="work-with-us">
+  <div class="section-eyebrow">Work With Us</div>
+  <h2 class="section-title">Three ways to bring DARC to your program.</h2>
+  <p class="section-body">DARC is currently available to sports organizations, high school programs, and clinicians in Washington, Oregon, California, and Nevada. Start with what makes sense for your program.</p>
+
+  <div class="offers-grid">
+    <div class="offer-card featured">
+      <div class="offer-badge">Start Here</div>
+      <div class="offer-label">Offer A</div>
+      <div class="offer-title">Staff Certification Workshop</div>
+      <div class="offer-body">A half-day workshop for your athletic training staff and coaches. Your team leaves with the full DARC protocol, sideline screen card, home program templates, and advancement criteria — and knows how to use them. Groups of 4–8 people.</div>
+      <div class="offer-price">$500–$1,500 per person · Minimum group of 4</div>
+    </div>
+    <div class="offer-card">
+      <div class="offer-label">Offer B</div>
+      <div class="offer-title">Protocol Licensing</div>
+      <div class="offer-body">License the full DARC protocol for your organization. Includes the sideline screen card, home program templates, clearance checklist, and a half-day AT staff workshop. Annual renewal with protocol updates.</div>
+      <div class="offer-price">$2,000–$8,000 per organization · Annual renewal</div>
+    </div>
+    <div class="offer-card">
+      <div class="offer-label">Offer C</div>
+      <div class="offer-title">Embedded Consulting</div>
+      <div class="offer-body">Monthly retainer during active season. Includes preseason baseline testing, Phase 2 evaluations within 48–72 hours of any concussion, Phase 3–5 oversight, AT staff support, and an end-of-season report.</div>
+      <div class="offer-price">$1,500–$5,000 per month · Seasonal retainer</div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section class="contact-section" id="contact">
+  <div class="section-eyebrow">Contact</div>
+  <h2 class="section-title">Let's talk about your program.</h2>
+
+  <div class="contact-inner">
+    <div>
+      <p class="contact-intro">Whether you're an athletic director evaluating protocols, a clinician looking to implement DARC, or a parent with questions — reach out. Every inquiry is answered personally.</p>
+      <div class="contact-detail">
+        <span class="contact-detail-label">Website</span>
+        <span class="contact-detail-value">darcprotocol.com</span>
+      </div>
+      <div class="contact-detail">
+        <span class="contact-detail-label">Geographic Focus</span>
+        <span class="contact-detail-value">West Coast — WA, OR, CA, NV</span>
+      </div>
+      <div class="contact-detail">
+        <span class="contact-detail-label">Clinician Certification</span>
+        <span class="contact-detail-value">Coming 2026/2027 — join the interest list</span>
+      </div>
+    </div>
+
+    <form class="contact-form" onsubmit="handleSubmit(event)">
+      <div class="form-row">
+        <div class="form-group">
+          <label class="form-label">First Name</label>
+          <input type="text" class="form-input" placeholder="Alex" required>
+        </div>
+        <div class="form-group">
+          <label class="form-label">Last Name</label>
+          <input type="text" class="form-input" placeholder="Rivera" required>
+        </div>
+      </div>
+      <div class="form-group">
+        <label class="form-label">Email</label>
+        <input type="email" class="form-input" placeholder="you@organization.com" required>
+      </div>
+      <div class="form-group">
+        <label class="form-label">Organization / Program</label>
+        <input type="text" class="form-input" placeholder="Westview High School Athletics">
+      </div>
+      <div class="form-group">
+        <label class="form-label">I'm interested in</label>
+        <select class="form-select">
+          <option value="">Select an option</option>
+          <option>Staff Certification Workshop (Offer C)</option>
+          <option>Protocol Licensing (Offer A)</option>
+          <option>Embedded Consulting (Offer B)</option>
+          <option>Clinician certification interest list</option>
+          <option>General inquiry</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label class="form-label">Message</label>
+        <textarea class="form-textarea" placeholder="Tell us about your program and what you're looking for."></textarea>
+      </div>
+      <button type="submit" class="form-submit">Send Inquiry</button>
+    </form>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <span class="footer-wordmark">DARC</span>
+  <span class="footer-copy">© 2026 DARC Protocol. All rights reserved. For clinical use only — not a substitute for physician evaluation.</span>
+</footer>
+
+<script>
+function handleSubmit(e) {
+  e.preventDefault();
+  const btn = e.target.querySelector('.form-submit');
+  btn.textContent = 'Sent — we\'ll be in touch.';
+  btn.style.background = '#4B3240';
+  btn.disabled = true;
+}
+</script>
+
+</body>
+</html>
